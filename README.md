@@ -4,8 +4,8 @@
 
 ## In Development ...
 
-1.) Make the game
-2.) Get basic deployment up
-3.) Design UI for game
-4.) Convert game to web w/ html and css
-5.) Implement a multiplayer version?(not sure yet)
+1.) Make the game\n
+2.) Get basic deployment up\n
+3.) Design UI for game\n
+4.) Convert game to web w/ html and css\n
+5.) Implement a multiplayer version?(not sure yet)\n
