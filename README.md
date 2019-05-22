@@ -18,10 +18,9 @@
 
 ### Basic Deployment of webapp / game
 1. What to use
-  - Django2 / Django
-  - Flask
-  - add others if easier or more efficient to implement with
-  
+    - Django2 / Django
+    - Flask
+    - add others if easier or more efficient to implement with
 2. Launch with /
 
 ### Design UI
