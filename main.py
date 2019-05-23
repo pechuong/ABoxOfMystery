@@ -20,11 +20,13 @@ logger.debug("Just a harmless debug Message")
 places = ["Treep city", "Hadem city", "Darnew city"]
 
 def start_game():
-    name = input("Hello, what's your name?\n")
+    print("+" + "="*26 + "+")
+    name = input("| Hello, what's your name? |\t")
+    print("+" + "="*26 + "+")
     print("Welcome " + name)
 
 def prompt_location(location):
-    print("="*25)
+    print("="*50)
     print("These are the places you can go to: ")
     i = 0
     for place in places:
@@ -41,23 +43,55 @@ def prompt_location(location):
         return 2
     else:
         return -1
-    
+
+class Location():
+    def __init__(self, name = None):
+        self.explored = False
+        if not name is None:
+            if (len(name) < 1):
+                self.name = "Unknown"
+            else:
+                self.name = name
+        else:
+            self.name = "Unknown"
+        self.display = self.name[0];
+
+    def get_name():
+        return self.name
+
+def print_map(world_map):
+    print("+" + " "*(26+10) + "+")
+    for x in range(10):
+        print("|" + " "*int(((26-10)/2)), end="")
+        for y in range(10):
+            print(world_map[x][y].display, end=" ")
+        print(" "*int(((26-10)/2)), end="|")
+        print()
+    print("+" + " "*(26+10) + "+")
 
 def main():
     start_game()
     location = "new_world"
+    world_map = []
+    for i in range(10):
+        row = [] 
+        for j in range(10):
+            row.append(Location())
+        world_map.append(row)
+    print_map(world_map)
+
     while (True):
         option = prompt_location(location)        
         if (option == 0):
-            location = "treep city"
+            location = "Treep City"
             print("You are now at " + location)
             ("In option 0")
         elif (option == 1):
-            location = "hadem city"
+            location = "Hadem City"
             print("You are now at " + location)
             print("In option 1")
         elif (option == 2):
-            location = "darnew city"
+            location = "Darnew City"
             print("You are now at " + location)
             print("In option 2")
         else:
