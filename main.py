@@ -21,8 +21,8 @@ places = ["Treep city", "Hadem city", "Darnew city"]
 
 def start_game():
     print("+" + "="*26 + "+")
-    name = input("| Hello, what's your name? |\t")
-    print("+" + "="*26 + "+")
+    print("| Hello, what's your name? |\t")
+    name = input("+" + "="*26 + "+\n")
     print("Welcome " + name)
 
 def prompt_location(location):
@@ -50,24 +50,32 @@ class Location():
         if not name is None:
             if (len(name) < 1):
                 self.name = "Unknown"
+                self.display ="༝";
             else:
                 self.name = name
+                self.display = self.name[0]
         else:
             self.name = "Unknown"
-        self.display = self.name[0];
+            self.display ="༝";
 
     def get_name():
         return self.name
 
 def print_map(world_map):
-    print("+" + " "*(26+10) + "+")
+    print("This is the world map currently")
+    print("    - U = unknown territory")
+    print("    - [letter] = Place/town/location")
+    print("\t+" + "-"*((14+10)-1) + "+")
+    #print("|" + " "*(14+10) + "|")
     for x in range(10):
-        print("|" + " "*int(((26-10)/2)), end="")
-        for y in range(10):
+        print("\t|" + " "*int(((14-10)/2)), end="")
+        for y in range(9):
             print(world_map[x][y].display, end=" ")
-        print(" "*int(((26-10)/2)), end="|")
+        print(world_map[x][y + 1].display, end="")
+        print(" "*int(((14-10)/2)), end="|")
         print()
-    print("+" + " "*(26+10) + "+")
+    #print("|" + " "*(14+10) + "|")
+    print("\t+" + "-"*((14+10)-1) + "+")
 
 def main():
     start_game()
