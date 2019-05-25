@@ -19,12 +19,14 @@ logger.debug("Just a harmless debug Message")
 # Global Variables
 places = ["Treep city", "Hadem city", "Darnew city"]
 
+# TODO: change function name
 def start_game():
     print("+" + "="*26 + "+")
     print("| Hello, what's your name? |\t")
     name = input("+" + "="*26 + "+\n")
     print("Welcome " + name)
 
+# TODO: move to diff pack/module
 def prompt_location(location):
     print("="*50)
     print("These are the places you can go to: ")
@@ -44,6 +46,7 @@ def prompt_location(location):
     else:
         return -1
 
+# TODO: move to a different package / module
 class Location():
     def __init__(self, name = None):
         self.explored = False
@@ -56,12 +59,14 @@ class Location():
                 self.display = self.name[0]
         else:
             self.name = "Unknown"
-            self.display ="༝";
+            self.display ="ᝣ";
 
     def get_name():
         return self.name
 
+# TODO: move to location module / package
 def print_map(world_map):
+    print("="*50)
     print("This is the world map currently")
     print("    - U = unknown territory")
     print("    - [letter] = Place/town/location")
@@ -78,9 +83,11 @@ def print_map(world_map):
     print("\t+" + "-"*((14+10)-1) + "+")
 
 def main():
-    start_game()
+    start_game() # change function name
     location = "new_world"
     world_map = []
+
+    # TODO: Move this to function and call it generate_map(...)
     for i in range(10):
         row = [] 
         for j in range(10):
@@ -90,6 +97,7 @@ def main():
 
     while (True):
         option = prompt_location(location)        
+        # TODO: unhardcode this
         if (option == 0):
             location = "Treep City"
             print("You are now at " + location)
