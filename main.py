@@ -95,6 +95,12 @@ def main():
         world_map.append(row)
     print_map(world_map)
 
+    # TODO: Change so that it does action instead of location
+    # TODO: while the game is running, do some action
+    while (True):
+        # TODO: when you're at a location, there are different actions you can take
+        # do_action(location)
+    """ 
     while (True):
         option = prompt_location(location)        
         # TODO: unhardcode this
@@ -113,5 +119,6 @@ def main():
         else:
             print("You are currently at " + location)
             break
+    """
 
 main()
